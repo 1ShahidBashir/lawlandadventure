@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+#myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+</style>
+<body>
+
+<p>
+<button onclick="myMove()">Click Me</button> 
+</p>
+
+<div id ="myContainer">
+    <img src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxglSDo1Q15VrdqH5k5d5_ejjDgzqRpQI8Oc.QFNGXJWWjEYWsupbyFNTKJYbhJfGCB7Yd2IP0s5KxHfV5lkOmi0-" width="1000px">
+<div id ="myAnimation">
+    <img src="https://freepngimg.com/download/cartoon/4-2-cartoon-transparent.png" width="90px">
+</div>
+</div>
+
+<script>
+var id = null;
+function myMove() {
+  var elem = document.getElementById("myAnimation");   
+  var pos = 100;
+  clearInterval(id);
+  id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
